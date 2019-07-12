@@ -57,4 +57,17 @@ function mySet(){
         });
         return intersectionSet;
     };
+    // method to return difference of two sets
+    this.diff = function(otherSet){
+        let diffSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e) {
+            if(!otherSet.has(e)){
+                diffSet.add(e);
+            }
+        });        
+        return diffSet;
+    };
+    // method to test if set is a subset
+    
 } 
