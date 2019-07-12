@@ -34,3 +34,4 @@ q.enque('b');
 q.enque('c');
 q.enque('d');
 q.print();
+console.log(q.size());
