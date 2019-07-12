@@ -22,7 +22,7 @@ if (rword === word){
 }
 
 // create a stack
-let stack = function() {
+let Stack = function() {
     this.count = 0;
     this.storage = {};
 
