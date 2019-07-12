@@ -64,7 +64,8 @@ function Priorityqueue() {
     };
     // remove an item from the queue
     this.denque = function(){
-        return collection.shift();
+        let value = collection.shift();
+        return value[0];
     };
     // getting first element on the queue
     this.front = function(){
@@ -80,3 +81,5 @@ function Priorityqueue() {
 
     }
 }
+
+const pq = new Priorityqueue();
