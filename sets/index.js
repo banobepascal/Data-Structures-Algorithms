@@ -37,12 +37,12 @@ function mySet(){
     this.union = function(otherSet) {
         let unionSet = new mySet();
         let firstSet = this.values();
-        let secondSet = otherSet.value();
+        let secondSet = otherSet.values();
         firstSet.forEach(function(e){
-            unionSet(e);
+            unionSet.add(e);
         });
         secondSet.forEach(function(e){
-            unionSet(e);
+            unionSet.add(e);
         });
         return unionSet;
     };
@@ -76,3 +76,12 @@ function mySet(){
         });
     };
 } 
+
+let setA = new mySet();
+let setB = new mySet();
+setA.add('a');
+setB.add('b');
+setB.add('c');
+setB.add('a');
+setB.add('d');
+console.log(setA.union(setB).values());
