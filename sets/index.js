@@ -28,9 +28,22 @@ function mySet(){
             
         } 
         return false;  
-    }
+    };
     // method to return size of the collection
     this.size = function(){
         return collection.length;
-    }
+    };
+    // method to return unoin of two sets
+    this.union = function(otherSet) {
+        let unionSet = new mySet();
+        let firstSet = this.values();
+        let secondSet = otherSet.value();
+        firstSet.forEach(function(e){
+            unionSet(e);
+        });
+        secondSet.forEach(function(e){
+            unionSet(e);
+        });
+        return unionSet;
+    };
 } 
