@@ -40,6 +40,7 @@ console.log(q.front());
 
 
 
+// Adding a Priority object
 class Priorityqueue {
     constructor() {
         let collection = [];
