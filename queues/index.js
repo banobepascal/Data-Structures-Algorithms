@@ -40,3 +40,43 @@ console.log(q.front());
 
 
 
+function Priorityqueue() {
+    let collection = [];
+    // all items in the queue
+    this.print = function(){
+        console.log(collection);
+    };
+    this.enque = function(element){
+         if (this.isEmpty()){
+             collection.push(element);
+         } else {
+             for (let i=0; i < collection.length; i++){
+                 if (element[1] < collection[i][1]){
+                     collection.splice(i,0,element);
+                     added = true;
+                     break;
+                 }
+             }
+             if (!added){
+                 collection.push(element);
+             }
+         }
+    };
+    // remove an item from the queue
+    this.denque = function(){
+        return collection.shift();
+    };
+    // getting first element on the queue
+    this.front = function(){
+        return collection[0];
+    };
+    // getting length of the queue
+    this.size = function(){
+        return collection.length;
+    }
+    // getting errors in queue
+    this.isEmpty = function(){
+        return (collection.length === 0)
+
+    }
+}
