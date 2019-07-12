@@ -69,5 +69,10 @@ function mySet(){
         return diffSet;
     };
     // method to test if set is a subset
-    
+    this.subset = function(otherSet){
+        let firstSet = this.values();
+        return firstSet.every(function(value) {
+            return otherSet.has(value);
+        });
+    };
 } 
