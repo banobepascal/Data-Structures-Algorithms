@@ -34,5 +34,6 @@ q.enque('b');
 q.enque('c');
 q.enque('d');
 q.print();
+q.denque();
 console.log(q.size());
 console.log(q.front());
