@@ -46,4 +46,15 @@ function mySet(){
         });
         return unionSet;
     };
+    // method to intersect two sets
+    this.intersection = function(otherSet){
+        let intersectionSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(otherSet.has(e)){
+                intersectionSet.add(e);
+            }
+        });
+        return intersectionSet;
+    };
 } 
