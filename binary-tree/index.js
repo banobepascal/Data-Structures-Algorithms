@@ -7,3 +7,6 @@ class Node{
     }
 }
 
+class BST{
+    constructor(){}
+}
