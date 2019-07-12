@@ -7,4 +7,10 @@ function mySet(){
     this.has = function(element) {
         return (collection.indexOf(element) !== -1);
     };
+    // method to return the values in a collection
+    this.values = function(){
+        return collection;
+    };
+    
+
 } 
