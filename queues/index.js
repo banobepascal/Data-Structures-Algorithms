@@ -50,6 +50,7 @@ function Priorityqueue() {
          if (this.isEmpty()){
              collection.push(element);
          } else {
+             let added = false;
              for (let i=0; i < collection.length; i++){
                  if (element[1] < collection[i][1]){
                      collection.splice(i,0,element);
@@ -83,3 +84,8 @@ function Priorityqueue() {
 }
 
 const pq = new Priorityqueue();
+pq.enque(['Pascal', 4])
+pq.enque(['Tonny', 2])
+pq.enque(['Neymar', 1])
+pq.enque(['Messi', 3])
+pq.print();
