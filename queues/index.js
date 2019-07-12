@@ -22,7 +22,7 @@ function Queue() {
         return collection.length;
     }
     // getting errors in queue
-    this.avail = function(){
+    this.isEmpty = function(){
         return (collection.length === 0)
 
     }
