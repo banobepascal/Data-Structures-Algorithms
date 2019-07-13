@@ -185,6 +185,26 @@ class BST {
       return result;
     }
   }
+  levelOrder() {
+    let result = [];
+    let Q = [];
+    if(this.root != null) {
+      Q.push(this.root);
+      while (Q.length > 0) {
+        let node = Q.shift();
+        result.push(node.data);
+        if(node.left != null) {
+          Q.push(node.left);
+        };
+        if (node.right != null) {
+          Q.push(node.right);
+        };
+      };
+      return result;
+    } else {
+      return null;
+    };
+  };
 }
 
 const bst = new BST();
@@ -194,11 +214,12 @@ bst.add(4);
 bst.add(10);
 bst.add(3);
 bst.add(12);
-bst.add(8);
 bst.add(20);
 bst.add(9);
-// bst.add(5);
-// bst.add(40);
+bst.add(5);
+bst.add(7);
+bst.add(8.5);
+bst.add(2);
 console.log(bst.findMin());
 console.log(bst.findMax());
 // bst.remove(20);
@@ -208,3 +229,4 @@ console.log(bst.isBalanced());
 console.log('Inorder ' + bst.inOrder());
 console.log('Preorder ' + bst.preOrder());
 console.log('Postorder ' + bst.postOrder());
+console.log('levelOrder ' + bst.levelOrder());
