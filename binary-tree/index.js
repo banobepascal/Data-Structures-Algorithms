@@ -16,7 +16,7 @@ class BST {
       this.root = new Node(data);
       return;
     } else {
-      const searchTree = function(node) {
+      const searchTree = function (node) {
         if (data < node.data) {
           if (node.left === null) {
             node.left = new Node(data);
@@ -80,5 +80,15 @@ class BST {
     }
     return current;
   }
-  remove(data) {}
+  remove(data) {
+    const removeNode = function (node, data) {
+      if (node == null)
+        return false;
+    }
+    if (data == node.data) {
+      if (node.left == null && node.right == null)
+        return null;
+    }
+
+  }
 }
