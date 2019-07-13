@@ -70,7 +70,6 @@ class BST {
     let current = this.root;
     while (current) {
       if (data === current.data) {
-    console.log('data number not available');
         return true;
       }
       if (data < current.data) {
@@ -135,4 +134,4 @@ console.log(bst.findMin());
 console.log(bst.findMax());
 bst.remove(20);
 console.log(bst.findMin());
-console.log(bst.isPresent(40));
+console.log(bst.isPresent(10));
