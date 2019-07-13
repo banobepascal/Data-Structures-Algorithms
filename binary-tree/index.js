@@ -16,7 +16,7 @@ class BST {
       this.root = new Node(data);
       return;
     } else {
-      const searchTree = function (node) {
+      const searchTree = function(node) {
         if (data < node.data) {
           if (node.left === null) {
             node.left = new Node(data);
@@ -81,38 +81,39 @@ class BST {
     return current;
   }
   remove(data) {
-    const removeNode = function (node, data) {
-      if (node == null)
+    const removeNode = function(node, data) {
+      if (node == null) {
         return false;
-    }
-    if (data == node.data) {
-      // node has no children
-      if (node.left == null && node.right == null){
-        return null;
       }
-      // node has no left children
-      if(node.left == null) {
-        return node.right;
+      if (data == node.data) {
+        // node has no children
+        if (node.left == null && node.right == null) {
+          return null;
+        }
+        // node has no left children
+        if (node.left == null) {
+          return node.right;
+        }
+        // node has no right children
+        if (node.right == null) {
+          return node.left;
+        }
+        // node has two children
+        var tempNode = node.right;
+        while (tempNode.left !== null) {
+          tempNode = tempNode.left;
+        }
+        node.data = tempNode.data;
+        node.right = removeNode(node.right, tempNode.data);
+        return node;
+      } else if (data < node.data) {
+        node.left = removeNode(node.left, data);
+        return node;
+      } else {
+        node.right = removeNode(node.right, data);
+        return node;
       }
-      // node has no right children
-      if(node.right == null) {
-        return node.left;
-      }
-      // node has two children
-      var tempNode = node.right;
-      while (tempNode.left !== null){
-        tempNode = tempNode.left;
-      }
-      node.data = tempNode.data;
-      node.right = removeNode(node.right, tempNode.data);
-      return node;
-    } else if (data < node.data) {
-      node.left = removeNode(node.left, data);
-      return node;
-    } else {
-      node.right = removeNode(node.right, data);
-      return node;
-    }
+    };
     this.root = removeNode(this.root, data);
   }
 }
