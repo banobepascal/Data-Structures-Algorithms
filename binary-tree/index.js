@@ -205,3 +205,6 @@ console.log(bst.findMax());
 console.log(bst.findMin());
 console.log(bst.isPresent(10));
 console.log(bst.isBalanced());
+console.log('Inorder ' + bst.inOrder());
+console.log('Preorder ' + bst.preOrder());
+console.log('Postorder ' + bst.postOrder());
