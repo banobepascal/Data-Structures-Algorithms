@@ -52,10 +52,10 @@ class BST {
     }
     return current.data;
   }
-  find(data){
+  find(data) {
     let current = this.root;
-    while(current.data !== data){
-      if (data < current.data){
+    while (current.data !== data) {
+      if (data < current.data) {
         current = current.left;
       } else {
         current = current.right;
@@ -64,20 +64,21 @@ class BST {
         return null;
       }
     }
-    return current
+    return current;
   }
-  isPresent(data){
+  isPresent(data) {
     let current = this.root;
-    while(current) {
-      if (data === current.data){
+    while (current) {
+      if (data === current.data) {
         return true;
       }
-      if (data < current.data){
+      if (data < current.data) {
         current = current.left;
       } else {
         current = current.right;
       }
     }
-    return current
+    return current;
   }
+  remove(data) {}
 }
